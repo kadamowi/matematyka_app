@@ -121,7 +121,7 @@ class _DetailsState extends State<Details> {
   String answer = '';
 
   String _validateNumber(String value) {
-    int _valueAsInteger = value.isEmpty ? 0 : int.tryParse(value);
+    double _valueAsInteger = value.isEmpty ? 0 : double.tryParse(value);
     return _valueAsInteger < 0 ? 'Wartość musi być dodatnia ($value)' : null;
   }
 
@@ -227,12 +227,18 @@ class _DetailsState extends State<Details> {
     );
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      //resizeToAvoidBottomInset: false,
       appBar: bar,
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: titleSection,
+      body: SingleChildScrollView (
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: titleSection,
+        )
       ),
+      //body: Padding(
+      //  padding: EdgeInsets.all(16.0),
+      //  child: titleSection,
+      //),
     );
   }
 }
