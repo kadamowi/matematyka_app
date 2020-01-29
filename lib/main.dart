@@ -211,9 +211,20 @@ class _DetailsState extends State<Details> {
                     child: Text('Oblicz pole'),
                     color: Colors.lightGreen,
                   ),
-                  TeXView(
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TeXView(
                     teXHTML: r"""$$Pole trójkąta = \frac{1}{2}ah$$""",
+                    loadingWidget: Center(
+                      child: Text("My Custom Loading Widget"),
+                    ),
                   ),
+                ),
+              ),
+            ),                  
                   Text(
                     answer,
                     style: TextStyle(
