@@ -211,6 +211,9 @@ class _DetailsState extends State<Details> {
                     child: Text('Oblicz pole'),
                     color: Colors.lightGreen,
                   ),
+                  TeXView(
+                    teXHTML: r"""$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<br> """,
+                  ),
                   Text(
                     answer,
                     style: TextStyle(
