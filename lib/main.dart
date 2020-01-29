@@ -218,9 +218,6 @@ class _DetailsState extends State<Details> {
                   padding: const EdgeInsets.all(8.0),
                   child: TeXView(
                     teXHTML: r"""$$Pole trójkąta = \frac{1}{2}ah$$""",
-                    loadingWidget: Center(
-                      child: Text("My Custom Loading Widget"),
-                    ),
                   ),
                 ),
               ),
