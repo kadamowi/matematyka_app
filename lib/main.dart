@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tex/flutter_tex.dart';
 
 class Figure {
   final int code;
@@ -210,6 +211,17 @@ class _DetailsState extends State<Details> {
                     child: Text('Oblicz pole'),
                     color: Colors.lightGreen,
                   ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TeXView(
+                    teXHTML: r"""$$Pole trójkąta = \frac{1}{2}ah$$""",
+                  ),
+                ),
+              ),
+            ),                  
                   Text(
                     answer,
                     style: TextStyle(
