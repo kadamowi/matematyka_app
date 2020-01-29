@@ -212,7 +212,7 @@ class _DetailsState extends State<Details> {
                     color: Colors.lightGreen,
                   ),
                   TeXView(
-                    teXHTML: r"""$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<br> """,
+                    teXHTML: r"""$$Pole trójkąta = \frac{1}{2}ah$$""",
                   ),
                   Text(
                     answer,
