@@ -61,22 +61,22 @@ void main() {
 
 class HomeScreen extends StatelessWidget {
   final List<Figure> figures = [
-    Figure(1, 'Trójkąt', 'Pole trójkąta', r'\frac{1}{2}ah', 'images/Triangle.png', true, false,
+    Figure(1, 'Trójkąt', 'Pole trójkąta', r'Pole\ trójkąta = \frac{1}{2}ah', 'images/Triangle.png', true, false,
         true),
-    Figure(2, 'Trójkąt równoboczny', 'Pole trójkąta', r'\frac{1}{2}ah',
+    Figure(2, 'Trójkąt równoboczny', 'Pole trójkąta', r'Pole\ trójkąta = \frac{1}{2}ah',
         'images/Triangle_isosceles.png', true, false, true),
-    Figure(3, 'Trójkąt prostokątny', 'Pole trójkąta', r'\frac{1}{2}ah',
+    Figure(3, 'Trójkąt prostokątny', 'Pole trójkąta', r'Pole\ trójkąta = \frac{1}{2}ah',
         'images/Triangle_rectangular.png', true, false, true),
-    Figure(4, 'Prostokąt', 'Pole prostokąta', r'\frac{1}{2}ah', 'images/Rectangle.png', true,
+    Figure(4, 'Prostokąt', 'Pole prostokąta', r'Pole\ trójkąta = \frac{1}{2}ah', 'images/Rectangle.png', true,
         true, false),
     Figure(
-        5, 'Kwadrat', 'Pole kwadratu', r'a^2', 'images/Square.png', true, false, false),
-    Figure(6, 'Równoległobok', 'Pole równoległoboku', r'ah',
+        5, 'Kwadrat', 'Pole kwadratu', r'Pole\ kwadratu = a^2', 'images/Square.png', true, false, false),
+    Figure(6, 'Równoległobok', 'Pole równoległoboku', r'Pole\ równoległoboku = ah',
         'images/Parallelogram.png', true, false, true),
-    Figure(7, 'Romb', 'Pole rombu', r'ah', 'images/Diamond.png', true, false, true),
+    Figure(7, 'Romb', 'Pole rombu', r'Pole\ rombu = ah', 'images/Diamond.png', true, false, true),
     Figure(
-        8, 'Trapez', 'Pole trapezu', r'\frac{a+b}{2}h', 'images/Trapezoid.png', true, true, true),
-    Figure(9, 'Trapez równoramienny', 'Pole trapezu', r'\frac{a+b}{2}h',
+        8, 'Trapez', 'Pole trapezu', r'Pole\ trapezu = \frac{a+b}{2}h', 'images/Trapezoid.png', true, true, true),
+    Figure(9, 'Trapez równoramienny', 'Pole trapezu', r'Pole\ trapezu = \frac{a+b}{2}h',
         'images/Trapezoid_isosceles.png', true, true, true),
   ];
 
@@ -143,7 +143,7 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     final Figure figure = ModalRoute.of(context).settings.arguments;
     param..code = figure.code;
-    desc = figure.description+"="+figure.texCode;
+    desc = figure.texCode;
 
     var bar = AppBar(
       title: Text(figure.title),
@@ -220,6 +220,9 @@ class _DetailsState extends State<Details> {
                     child: TeXView(
                       //teXHTML: r"$$Pole\ trójkąta = \frac{1}{2}ah"+"=$answer"+r"$$",
                       teXHTML: r"$$"+"$desc = $answer"+r"$$",
+                      loadingWidget: Center(
+                         child: Text("Kalkulacja"),
+                      ),
                     ),
                   ),
                 ],
